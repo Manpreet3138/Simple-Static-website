@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="assets/css/payment.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="payment-container">
+
+    <h2>Order Details</h2>
+
+    <div class="summary-box">
+      <p><strong>Product:</strong> <span id="productName"></span></p>
+      <p><strong>Price:</strong> ₹<span id="productPrice"></span></p>
+    </div>
+
+    <h3>Enter Your Details</h3>
+
+    <form class="payment-form">
+
+      <label>Full Name</label>
+      <input type="text" id="name" required placeholder="Your Name">
+
+      <label>Phone Number</label>
+      <input type="tel" id="phone" required placeholder="9876543210">
+
+      <label>Address</label>
+      <textarea id="address" rows="3" required placeholder="Full delivery address"></textarea>
+
+      <h3>Payment Method</h3>
+
+      <div class="pay-options">
+
+        <label class="pay-row">
+          <input type="radio" name="payment" value="COD" checked>
+          <span>Cash on Delivery (Available ✅)</span>
+        </label>
+
+        <label class="pay-row disabled">
+          <input type="radio" disabled>
+          <span>Credit / Debit Card (Not available)</span>
+        </label>
+
+        <label class="pay-row disabled">
+          <input type="radio" disabled>
+          <span>UPI Payment (Not available)</span>
+        </label>
+
+        <label class="pay-row disabled">
+          <input type="radio" disabled>
+          <span>Wallets (Not available)</span>
+        </label>
+
+      </div>
+
+      <button type="submit" class="place-order">Place Order</button>
+
+    </form>
+
+  </div>
+
+  <script>
+    // Fetch product details from URL
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("productName").textContent = params.get("product");
+    document.getElementById("productPrice").textContent = params.get("price");
+
+    // Submit handler
+    document.querySelector(".payment-form").addEventListener("submit", function(e){
+      e.preventDefault();
+      alert("Your order has been placed successfully!");
+    });
+  </script>
+
+</body>
+</html>
