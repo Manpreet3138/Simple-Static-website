@@ -8,10 +8,9 @@ This project includes a product catalog, animated UI, dark mode, FAQs, contact f
 ---
 
 ## ✅ Live Demo  
-(Replace the link below with your GitHub Pages / Netlify / Vercel link)
 
-👉 **Live Website:** https://stackblitz.com/~/github.com/Manpreet3138/Simple-Static-website
 
+👉 **Live Website:** https://manpreet3138.github.io/Simple-Static-website/
 ---
 
 ## ✅ Features
